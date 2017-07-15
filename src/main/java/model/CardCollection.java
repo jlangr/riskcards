@@ -11,6 +11,8 @@ public class CardCollection {
     }
 
     public boolean isValidSet() {
-        return cardTypes.size() == 3;
+        return cardTypes.size() == 3 &&
+               (cardTypes.contains(CardType.Joker) ||
+                cardTypes.stream().distinct().count() != 2);
     }
 }
